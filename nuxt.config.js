@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import { resolve } from 'path'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -81,5 +82,9 @@ export default {
     color: colors.blue.darken2,
     height: '5px',
     continuous: true
+  },
+
+  alias: {
+    'images': resolve(__dirname, './assets/images'),
   }
 }
