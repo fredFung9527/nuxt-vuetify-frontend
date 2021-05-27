@@ -1,7 +1,16 @@
 {
   "name": "nuxt-vuetify-frontend",
+  "description": "Frontend template using nuxt and vuetify",
   "version": "1.0.0",
+  "homepage": "/pages/index.vue",
   "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Fred Fung",
+    "email": "ylfungfred@gmail.com"
+  },
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",

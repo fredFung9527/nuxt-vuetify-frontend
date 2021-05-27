@@ -70,6 +70,13 @@
           >
             Continue
           </v-btn>
+          <v-btn
+            color="primary"
+            nuxt
+            @click="test()"
+          >
+            Test
+          </v-btn>
         </v-card-actions>
       </v-card>
     </v-col>
@@ -84,6 +91,14 @@ export default {
   components: {
     Logo,
     VuetifyLogo
+  },
+  mounted() {
+  },
+  methods: {
+    test() {
+      this.$nuxt.$loading.start()
+      setTimeout(() => this.$nuxt.$loading.finish(), 5000)
+    }
   }
 }
 </script>
