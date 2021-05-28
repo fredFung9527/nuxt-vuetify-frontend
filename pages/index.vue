@@ -12,6 +12,7 @@ import Vue from 'vue'
 export default Vue.extend({
   mounted() {
     document.title = 'Home'
+    this.$helper.test();
   },
   methods: {
     test() {
