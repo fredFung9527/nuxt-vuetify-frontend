@@ -85,6 +85,6 @@ export default {
   },
 
   alias: {
-    'images': resolve(__dirname, './assets/images'),
+    '@images': resolve(__dirname, './assets/images'),
   }
 }

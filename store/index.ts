@@ -2,7 +2,7 @@
 import { getAccessorType, mutationTree } from 'typed-vuex';
 
 export const state = () => ({
-  email: '',
+  email: '' as string,
 });
 
 type RootState = ReturnType<typeof state>;

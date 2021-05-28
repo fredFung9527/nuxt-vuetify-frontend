@@ -1,8 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      aaaaaaaaaaa
-      <v-img :src="require('images/icon.png')"/>
+      <v-img :src="require('@images/icon.png')"/>
     </v-col>
   </v-row>
 </template>
@@ -16,6 +15,7 @@ export default Vue.extend({
   },
   methods: {
     test() {
+      console.log(this.$accessor.email)
       this.$nuxt.$loading.start()
       setTimeout(() => this.$nuxt.$loading.finish(), 5000)
     }
