@@ -18,4 +18,4 @@ declare module 'vue/types/vue' {
 export default (originalContext: Context) => {
   context = originalContext;
   Vue.prototype.$helper = functions;
-}
+};
