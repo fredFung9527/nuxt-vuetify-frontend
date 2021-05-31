@@ -2,7 +2,8 @@
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
       <v-img :src="require('@images/icon.png')"/>
-      <sample-component/>
+      <lang-switcher/>
+      {{$t('welcome')}}
     </v-col>
   </v-row>
 </template>
@@ -18,10 +19,7 @@ export default class App extends mixins(MyClass) {
       title: 'Home Page'
     }
   };
-
   mounted() {
-    this.setLoading(true);
-    setTimeout(() => {this.setLoading()}, 2000);
-  };
+  }
 };
 </script>

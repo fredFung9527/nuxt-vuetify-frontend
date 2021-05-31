@@ -24,5 +24,13 @@ export class MyClass extends Vue {
         this.$nuxt.$loading.finish();
       }
     });
+  };
+
+  $push(path: string): void {
+    this.$router.push(this.localePath(path));
+  };
+
+  $replace(path: string): void {
+    this.$router.replace(this.localePath(path));
   }
 };

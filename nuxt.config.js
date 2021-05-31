@@ -43,8 +43,26 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // https://i18n.nuxtjs.org
+    'nuxt-i18n'
   ],
+
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.js' },
+      { code: 'cht', iso: 'zh-TW', file: 'cht.js' },
+      { code: 'chs', iso: 'zh-CN', file: 'chs.js' },
+    ],
+    lazy: true,
+    langDir: 'translations/',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      onlyOnRoot: true,
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
