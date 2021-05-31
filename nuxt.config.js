@@ -1,5 +1,14 @@
-import colors from 'vuetify/es5/util/colors'
-import { resolve } from 'path'
+import colors from 'vuetify/es5/util/colors';
+import { resolve } from 'path';
+let config = require('./config/default.json');
+
+if (process.env.NODE_ENV === 'production') {
+  const productionConfig = require('./config/production.json');
+  config = {
+    ...config,
+    ...productionConfig
+  };
+}
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -14,6 +23,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  server: {
+    host: config.host,
+    port: config.port
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -105,5 +119,7 @@ export default {
 
   alias: {
     '@images': resolve(__dirname, './assets/images')
-  }
+  },
+
+  env: config,
 }

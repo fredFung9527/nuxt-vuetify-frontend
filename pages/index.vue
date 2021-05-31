@@ -20,6 +20,8 @@ export default class App extends mixins(MyClass) {
     }
   };
   mounted() {
+    console.log('aaaaaaa')
+    console.log(process.env.port)
   }
 };
 </script>
