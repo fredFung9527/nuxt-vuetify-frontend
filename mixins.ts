@@ -8,9 +8,7 @@ import { MetaInfo } from 'vue-meta';
 export class MyClass extends Vue {
   loading: boolean = false;
 
-  head():MetaInfo {
-    return {};
-  };
+  head(): (MetaInfo | void) {};
 
   mounted(): void {}; // to be extended
 
