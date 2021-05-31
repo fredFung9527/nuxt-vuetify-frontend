@@ -3,11 +3,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins, Prop } from 'vue-property-decorator';
+import { Component, mixins, Prop } from 'nuxt-property-decorator';
 import { MyClass } from '~/mixins';
 
 @Component
-export default class SampleComponent extends Mixins(MyClass) {
+export default class SampleComponent extends mixins(MyClass) {
   @Prop({ default: 'Hello World!' }) readonly text!: string;
 };
 </script>

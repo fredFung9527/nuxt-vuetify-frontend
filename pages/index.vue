@@ -8,14 +8,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Mixins } from 'vue-property-decorator';
+import { Component, mixins } from 'nuxt-property-decorator';
 import { MyClass } from '~/mixins';
 
 @Component
-export default class App extends Mixins(MyClass) {
+export default class App extends mixins(MyClass) {
+  head() {
+    return {
+      title: 'Home Page'
+    }
+  };
+
   mounted() {
     this.setLoading(true);
     setTimeout(() => {this.setLoading()}, 2000);
-  }
+  };
 };
 </script>

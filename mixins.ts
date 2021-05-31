@@ -1,16 +1,20 @@
 // Vue minxins
 
-import Vue from 'vue';
-import Component, { createDecorator } from 'vue-class-component';
+import { Component, Vue } from 'nuxt-property-decorator';
+import { MetaInfo } from 'vue-meta';
 
 // You can declare mixins as the same style as components.
 @Component
 export class MyClass extends Vue {
   loading: boolean = false;
 
-  mounted() {}; // to be extended
+  head():MetaInfo {
+    return {};
+  };
 
-  beforeMount() {}; // to be extended
+  mounted(): void {}; // to be extended
+
+  beforeMount(): void {}; // to be extended
 
   setLoading(value?: boolean): void {
     this.$nextTick(() => {
