@@ -4,12 +4,12 @@ import { resolve } from 'path'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - nuxt-vuetify-frontend',
-    title: 'nuxt-vuetify-frontend',
+    titleTemplate: '%s - Nuxt.js',
+    title: 'Frontend Template',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      { hid: 'description', name: 'description', content: 'Frontend template using nuxt and vuetify' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

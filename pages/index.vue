@@ -1,25 +1,21 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <v-img :src="require('@images/icon.png')" @click="test()"/>
+      <v-img :src="require('@images/icon.png')"/>
+      <sample-component/>
     </v-col>
   </v-row>
 </template>
 
 <script lang="ts">
-import Component, { mixins } from 'vue-class-component';
-import { MyPage } from '~/mixins'
+import { Component, Mixins } from 'vue-property-decorator';
+import { MyClass } from '~/mixins';
 
 @Component
-export default class App extends mixins(MyPage) {
+export default class App extends Mixins(MyClass) {
   mounted() {
     this.setLoading(true);
-    setTimeout(() => {this.setLoading()}, 5000)
+    setTimeout(() => {this.setLoading()}, 2000);
   }
-
-  test() {
-    this.setLoading(true);
-    setTimeout(() => {this.setLoading()}, 5000)
-  }
-}
+};
 </script>
