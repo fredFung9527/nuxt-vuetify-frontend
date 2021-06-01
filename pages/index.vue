@@ -19,9 +19,5 @@ export default class App extends mixins(MyClass) {
       title: 'Home Page'
     }
   };
-  mounted() {
-    console.log('aaaaaaa')
-    console.log(process.env.port)
-  }
 };
 </script>

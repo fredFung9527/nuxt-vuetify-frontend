@@ -1,23 +1,35 @@
 // Tutorial: https://github.com/danielroe/typed-vuex
 import { getAccessorType, mutationTree } from 'typed-vuex';
+import { User } from '~/model-types'
 
 export const state = () => ({
-  email: '' as string,
+  connected: false as boolean,
+  user: {} as User,
 });
 
 type RootState = ReturnType<typeof state>;
 
 export const getters = {
-  email: (state: RootState) => state.email,
+  userID(state: RootState): string {
+    return state.user?._id || '';
+  },
+  logined(): boolean {
+    return getters.userID.length > 0 || false;
+  },
 };
 
 export const mutations = mutationTree(state, {
-  setEmail(state, newValue: string) {
-    state.email = newValue
+  setConnected(state, v: boolean) {
+    state.connected = v || false;
   },
-
-  initialiseStore() {
-    console.log('initialised')
+  setUser(state, user: User) {
+    state.user = user || {};
+    localStorage.setItem('user', JSON.stringify(state.user));
+  },
+  initialiseStore(state) {
+    const userRecord = localStorage.getItem('user');
+    state.user = userRecord ?JSON.parse(userRecord) : {};
+    console.log('Store is initialised');
   },
 });
 
