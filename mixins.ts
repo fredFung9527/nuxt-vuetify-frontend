@@ -8,6 +8,8 @@ import { MetaInfo } from 'vue-meta';
 export class MyClass extends Vue {
   loading: boolean = false;
 
+  layout(): (string | void) {};
+  
   head(): (MetaInfo | void) {};
 
   mounted(): void {}; // to be extended

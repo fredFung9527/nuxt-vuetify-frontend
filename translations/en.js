@@ -1,3 +1,5 @@
 export default {
-  welcome: 'Welcome'
+  homePage: "Home Page",
+  pageNotFound: "Page Not Found",
+  unknownError: "Unknown Error"
 };
