@@ -1,9 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col cols="12" sm="8" md="6">
-      <v-img :src="require('@images/icon.png')"/>
       <lang-switcher/>
-      {{$t('welcome')}}
     </v-col>
   </v-row>
 </template>
