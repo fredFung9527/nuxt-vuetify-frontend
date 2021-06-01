@@ -5,6 +5,10 @@ import { User } from '~/model-types'
 export const state = () => ({
   connected: false as boolean,
   user: {} as User,
+
+  alert: false as boolean,
+  alertMessage: '' as string,
+  alertType: '' as string
 });
 
 type RootState = ReturnType<typeof state>;
@@ -31,6 +35,19 @@ export const mutations = mutationTree(state, {
     state.user = userRecord ?JSON.parse(userRecord) : {};
     console.log('Store is initialised');
   },
+  closeAlert(state) {
+    state.alert = false;
+  },
+  alertError(state, message: string) {
+    state.alert = true;
+    state.alertType = 'error';
+    state.alertMessage = message || '';
+  },
+  alertSuccess(state, message: string) {
+    state.alert = true;
+    state.alertType = 'success';
+    state.alertMessage = message || '';
+  }
 });
 
 export const accessorType = getAccessorType({

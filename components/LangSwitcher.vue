@@ -1,19 +1,30 @@
 <template>
-  <div>
-    <nuxt-link
-      v-for="(locale, idx) in availableLocales"
-      :key="locale.code"
-      :to="switchLocalePath(locale.code)"
-    >
-      {{ `${idx === 0 ? '' : '/ '}${localeNames[locale.code]}` }}
-    </nuxt-link>
-  </div>
+  <v-menu offset-y open-on-hover>
+    <template v-slot:activator="{ on, attrs }">
+      <v-btn
+        depressed
+        v-bind="attrs"
+        v-on="on"
+      >
+        <v-icon>mdi-translate</v-icon>
+        <v-icon small>mdi-chevron-down</v-icon>
+      </v-btn>
+    </template>
+    <v-list>
+      <v-list-item
+        v-for="(locale, idx) in $i18n.locales"
+        :key="idx"
+        :to="switchLocalePath(locale.code)"
+      >
+        <v-list-item-title>{{ localeNames[locale.code] }}</v-list-item-title>
+      </v-list-item>
+    </v-list>
+  </v-menu>
 </template>
 
 <script lang="ts">
 import { Component, mixins } from 'nuxt-property-decorator';
 import { MyClass } from '~/mixins';
-import { LocaleObject } from 'nuxt-i18n';
 
 @Component
 export default class LangSwitcher extends mixins(MyClass) {
@@ -21,11 +32,6 @@ export default class LangSwitcher extends mixins(MyClass) {
     'en': 'English',
     'cht': '繁體中文',
     'chs': '简体中文'
-  };
-
-  get availableLocales(): LocaleObject[] {
-    const all = <LocaleObject[]>this.$i18n.locales || [];
-    return all.filter(i => i.code !== this.$i18n.locale);
   };
 };
 </script>
