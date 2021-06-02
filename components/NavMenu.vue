@@ -1,9 +1,10 @@
 <template>
-  <v-list dense nav>
+  <v-list dense nav class="navMenu">
     <v-text-field 
       filled rounded dense hide-details
       append-icon="mdi-magnify"
       v-model="keyowrd"
+      class="my-2"
     />
     <div v-for="(item, idx) in filteredItems" :key="`menu-${idx}`">
       <v-list-group
@@ -99,17 +100,16 @@ export default class NavMenu extends mixins(MyClass) {
       title: 'pages.profile',
       to: '/profile'
     },
-    {
-      icon: 'mdi-account-circle',
-      title: 'pages.profile',
-      subItems: [
-        {
-          icon: 'mdi-account-circle',
-          title: 'pages.profile',
-          to: '/'
-        }
-      ]
-    },
   ];
 };
 </script>
+
+<style scoped>
+.navMenu {
+  padding-top: 0px !important;
+}
+
+.navMenu >>> .v-list-item--active {
+  color: var(--v-primary-base) !important;
+}
+</style>

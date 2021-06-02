@@ -1,5 +1,7 @@
 <template>
-  
+  <v-container>
+    
+  </v-container>
 </template>
 
 <script lang="ts">
@@ -10,7 +12,7 @@ import { MyClass } from '~/mixins';
 export default class App extends mixins(MyClass) {
   head() {
     return {
-      title: 'Sample Page'
+      title: <string>this.$t('pages.profile')
     }
   }
 };
