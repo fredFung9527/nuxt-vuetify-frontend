@@ -17,8 +17,8 @@ export const getters = {
   userID(state: RootState): string {
     return state.user?._id || '';
   },
-  logined(): boolean {
-    return getters.userID.length > 0 || false;
+  logined(state: RootState): boolean {
+    return getters.userID(state).length > 0 || false;
   },
 };
 

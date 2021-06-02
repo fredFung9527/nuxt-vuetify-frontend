@@ -2,7 +2,7 @@
   <v-form ref="loginForm" class="full-height">
     <v-row justify="center" align="center" class="full-height">
       <v-col cols="12" sm="8" md="6">
-        <div class="title my-5">{{$t('loginTitle')}}</div>
+        <div class="text-h5 my-5">{{$t('loginTitle')}}</div>
         <v-text-field 
           prepend-inner-icon="mdi-email" filled rounded 
           :label="$t('email')" 
@@ -55,7 +55,7 @@ export default class App extends mixins(MyClass, InputRules) {
         email: this.email,
         password: this.password
       });
-      this.$replace(this.localePath('/'));
+      this.$replace('/');
     } catch (e) {
       if (e.message === 'Invalid login') {
         this.$accessor.alertError(<string>this.$t('errors.wrongPassword'));

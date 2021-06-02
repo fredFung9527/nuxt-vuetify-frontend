@@ -2,7 +2,7 @@
   <v-menu offset-y open-on-hover>
     <template v-slot:activator="{ on, attrs }">
       <v-btn
-        depressed
+        depressed text
         v-bind="attrs"
         v-on="on"
       >
