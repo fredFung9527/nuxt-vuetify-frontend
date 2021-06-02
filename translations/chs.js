@@ -12,6 +12,7 @@ export default {
   },
   pages: {
     home: "主页",
+    profile: "我的帐户",
   },
   rules: {
     required: "必须填写",

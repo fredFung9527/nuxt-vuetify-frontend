@@ -8,10 +8,11 @@ export default {
   loginTitle: "Login to your account",
   errors: {
     wrongPassword: "Incorrect password",
-    timeout: "connection timeout"
+    timeout: "Connection timeout"
   },
   pages: {
     home: "Home",
+    profile: "Profile",
   },
   rules: {
     required: "Required",

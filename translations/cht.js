@@ -12,6 +12,7 @@ export default {
   },
   pages: {
     home: "主頁",
+    profile: "我的帳戶",
   },
   rules: {
     required: "必須填寫",
