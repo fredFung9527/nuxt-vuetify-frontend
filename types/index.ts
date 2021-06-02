@@ -11,6 +11,6 @@ declare module 'vue/types/vue' {
   interface Vue {
     $accessor: typeof accessorType,
     $vuetify: Framework
-
   }
 }
+

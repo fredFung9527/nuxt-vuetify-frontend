@@ -1,6 +1,6 @@
 // Tutorial: https://github.com/danielroe/typed-vuex
 import { getAccessorType, mutationTree } from 'typed-vuex';
-import { User } from '~/model-types'
+import { User } from '~/types/models';
 
 export const state = () => ({
   connected: false as boolean,

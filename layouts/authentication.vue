@@ -18,7 +18,9 @@
     <v-app-bar hide-on-scroll app>
       <v-row align="center">
         <v-col>
-          <v-img height="50px" width="50px" :src="require('@images/icon.png')" contain/>
+          <nuxt-link :to="localePath('/')">
+            <v-img height="50px" width="50px" :src="require('@images/icon.png')" contain/>
+          </nuxt-link>
         </v-col>
         <v-col cols="auto">
           <lang-switcher/>
@@ -27,7 +29,7 @@
       </v-row>
     </v-app-bar>
     <v-main>
-      <v-container>
+      <v-container class="full-height">
         <nuxt />
       </v-container>
     </v-main>
@@ -50,3 +52,12 @@ export default class DefaultLayout extends mixins(MyClass) {
   };
 };
 </script>
+
+<style>
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+</style>

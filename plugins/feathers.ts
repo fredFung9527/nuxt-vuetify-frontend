@@ -5,7 +5,7 @@ import io from 'socket.io-client';
 import Vue from 'vue';
 import { Context } from '@nuxt/types';
 import { AuthenticationResult } from '@feathersjs/authentication';
-import { User } from '~/model-types';
+import { User } from '~/types/models';
 
 let context: Context;
 

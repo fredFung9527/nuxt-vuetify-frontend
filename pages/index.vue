@@ -14,7 +14,7 @@ import { MyClass } from '~/mixins';
 export default class App extends mixins(MyClass) {
   head() {
     return {
-      title: 'Home Page'
+      title: <string>this.$t('pages.home')
     }
   };
 };
