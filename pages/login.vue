@@ -3,10 +3,24 @@
     <v-row justify="center" align="center" class="full-height">
       <v-col cols="12" sm="8" md="6">
         <div class="title my-5">{{$t('loginTitle')}}</div>
-        <v-text-field outlined :label="$t('email')" v-model="email" :rules="[checkReuqired(email), checkEmail(email)]"/>
-        <v-text-field outlined :label="$t('password')" v-model="password" :rules="[checkLengthMin(password)]" @keydown.enter="login()"/>
+        <v-text-field 
+          prepend-inner-icon="mdi-email" filled rounded 
+          :label="$t('email')" 
+          v-model="email" 
+          :rules="[checkReuqired(email), checkEmail(email)]"
+        />
+        <v-text-field 
+          prepend-inner-icon="mdi-lock" filled rounded
+          :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
+          :type="showPassword ? 'text' : 'password'"
+          :label="$t('password')" 
+          v-model="password" 
+          :rules="[checkLengthMin(password)]"
+          @click:append.stop="showPassword = !showPassword"
+          @keydown.enter="login()"
+        />
         <v-row justify="end" no-gutters>
-          <v-btn color="primary" @click.stop="login()" :loading="loading">{{$t('login')}}</v-btn>
+          <v-btn rounded large color="primary" @click.stop="login()" :loading="loading">{{$t('login')}}</v-btn>
         </v-row>
       </v-col>
     </v-row>
@@ -29,6 +43,7 @@ export default class App extends mixins(MyClass, InputRules) {
     }
   };
 
+  showPassword: boolean = false;
   email: string = '';
   password: string = '';
 
