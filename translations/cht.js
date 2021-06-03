@@ -6,9 +6,11 @@ export default {
   password: "密碼",
   login: "登入",
   loginTitle: "登入你的帳號",
+  basicInfo: "基本資料",
   errors: {
     wrongPassword: "密碼錯誤",
-    timeout: "連接超時"
+    timeout: "連接超時",
+    loginFirst: "請先登入"
   },
   pages: {
     home: "主頁",

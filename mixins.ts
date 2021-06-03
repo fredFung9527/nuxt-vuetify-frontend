@@ -55,3 +55,17 @@ export class InputRules extends Vue {
     return v && v.length >= min || <string>this.$t('rules.atLeastLength', {length: min});
   };
 };
+
+@Component
+export class LoginFirst extends Vue {
+  mounted() {
+    try {
+      this.$accessor.initialiseStore();
+      if (!this.$accessor.logined) {
+        this.$router.replace(this.localePath('/login'));
+        this.$accessor.alertError(<string>this.$t('errors.loginFirst'));
+        return;
+      }
+    } catch (e) {}
+  };
+};

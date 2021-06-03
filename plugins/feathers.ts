@@ -60,7 +60,7 @@ const authFunctions = {
     }
   },
   async logout() :Promise<void> {
-    feathersClient.logout();
+    await feathersClient.logout();
     context.store.commit('setUser', {});
   }
 }

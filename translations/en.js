@@ -6,9 +6,11 @@ export default {
   password: "Password",
   login: "Login",
   loginTitle: "Login to your account",
+  basicInfo: "Basic Information",
   errors: {
     wrongPassword: "Incorrect password",
-    timeout: "Connection timeout"
+    timeout: "Connection timeout",
+    loginFirst: "Please login first"
   },
   pages: {
     home: "Home",

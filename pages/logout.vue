@@ -1,6 +1,4 @@
 <template>
-  <v-container>
-  </v-container>
 </template>
 
 <script lang="ts">
@@ -9,10 +7,14 @@ import { MyClass } from '~/mixins';
 
 @Component
 export default class App extends mixins(MyClass) {
-  head() {
-    return {
-      title: <string>this.$t('pages.home')
+  async mounted() {
+    try {
+      await this.$auth.logout();
+      console.log('Logouted')
+      this.$replace('/login');
+    } catch (e) {
+      console.log(e);
     }
-  };
+  }
 };
 </script>

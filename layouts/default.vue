@@ -4,6 +4,8 @@
       app top
       :value="$accessor.alert"
       :color="$accessor.alertType"
+      @input="$accessor.closeAlert()"
+      timeout="2500"
     >
       <v-row align="center">
         <v-col>
@@ -69,15 +71,5 @@ import { MyClass } from '~/mixins';
 export default class DefaultLayout extends mixins(MyClass) {
   drawer: boolean = false;
   isMini: boolean = false;
-
-  mounted() {
-    try {
-      this.$accessor.initialiseStore();
-      if (!this.$accessor.logined) {
-        this.$replace('/login');
-        return;
-      }
-    } catch (e) {}
-  };
 };
 </script>

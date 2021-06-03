@@ -20,7 +20,7 @@
 
         <v-list-item
           v-for="(sItem, jdx) in item.subItems" :key="`menu-${idx}-${jdx}`"
-          link :to="localePath(sItem.to)"
+          exact :to="localePath(sItem.to)"
         >
           <v-list-item-content>
             <v-list-item-title>{{$t(sItem.title)}}</v-list-item-title>
@@ -30,7 +30,7 @@
           </v-list-item-icon>
         </v-list-item>
       </v-list-group>
-      <v-list-item v-else link :to="localePath(item.to)">
+      <v-list-item v-else exact :to="localePath(item.to)">
         <v-list-item-icon>
           <v-icon>{{item.icon}}</v-icon>
         </v-list-item-icon>

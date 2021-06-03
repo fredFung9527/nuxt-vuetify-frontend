@@ -4,6 +4,8 @@
       app top
       :value="$accessor.alert"
       :color="$accessor.alertType"
+      @input="$accessor.closeAlert()"
+      timeout="2500"
     >
       <v-row align="center">
         <v-col>

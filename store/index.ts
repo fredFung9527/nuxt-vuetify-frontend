@@ -3,6 +3,7 @@ import { getAccessorType, mutationTree } from 'typed-vuex';
 import { User } from '~/types/models';
 
 export const state = () => ({
+  ininted: false as boolean,
   connected: false as boolean,
   user: {} as User,
 
@@ -31,9 +32,11 @@ export const mutations = mutationTree(state, {
     localStorage.setItem('user', JSON.stringify(state.user));
   },
   initialiseStore(state) {
+    if (state.ininted) return;
     const userRecord = localStorage.getItem('user');
     state.user = userRecord ?JSON.parse(userRecord) : {};
     console.log('Store is initialised');
+    state.ininted = true;
   },
   closeAlert(state) {
     state.alert = false;
