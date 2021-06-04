@@ -1,6 +1,6 @@
 <template>
   <v-btn 
-    icon
+    icon depressed
     @click="$vuetify.theme.dark = !$vuetify.theme.dark"
   >
     <v-icon v-if="$vuetify.theme.dark">mdi-brightness-6</v-icon>
