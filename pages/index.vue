@@ -5,10 +5,10 @@
 
 <script lang="ts">
 import { Component, mixins } from 'nuxt-property-decorator';
-import { MyClass } from '~/mixins';
+import { MyClass, LoginFirst } from '~/mixins';
 
 @Component
-export default class App extends mixins(MyClass) {
+export default class App extends mixins(MyClass, LoginFirst) {
   head() {
     return {
       title: <string>this.$t('pages.home')

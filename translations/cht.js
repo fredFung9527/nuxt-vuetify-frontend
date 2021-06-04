@@ -7,6 +7,14 @@ export default {
   login: "登入",
   loginTitle: "登入你的帳號",
   basicInfo: "基本資料",
+  firstName: "名稱",
+  lastName: "姓氏",
+  update: "更新",
+  updated: "已更新",
+  changePassword: "修改密碼",
+  oldPassword: "舊密碼",
+  newPassword: "新密碼",
+  confirmPassword: "確認新密碼",
   errors: {
     wrongPassword: "密碼錯誤",
     timeout: "連接超時",
@@ -19,6 +27,7 @@ export default {
   rules: {
     required: "必須填寫",
     wrongEmail: "電郵格式錯誤",
-    atLeastLength: "至少 {length} 個字符"
+    atLeastLength: "至少 {length} 個字符",
+    inconsistPasswords: "密碼不一致"
   }
 };

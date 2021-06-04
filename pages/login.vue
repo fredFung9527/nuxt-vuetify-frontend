@@ -7,17 +7,13 @@
           prepend-inner-icon="mdi-email" filled rounded 
           :label="$t('email')" 
           v-model="email" 
-          :rules="[checkReuqired(email), checkEmail(email)]"
+          :rules="[checkRequired(email), checkEmail(email)]"
         />
-        <v-text-field 
-          prepend-inner-icon="mdi-lock" filled rounded
-          :append-icon="showPassword ? 'mdi-eye-off' : 'mdi-eye'"
-          :type="showPassword ? 'text' : 'password'"
+        <password-field
           :label="$t('password')" 
           v-model="password" 
           :rules="[checkLengthMin(password)]"
-          @click:append.stop="showPassword = !showPassword"
-          @keydown.enter="login()"
+          @enter="login()"
         />
         <v-row justify="end" no-gutters>
           <v-btn rounded large color="primary" @click.stop="login()" :loading="loading">{{$t('login')}}</v-btn>
@@ -43,7 +39,6 @@ export default class App extends mixins(MyClass, InputRules) {
     }
   };
 
-  showPassword: boolean = false;
   email: string = '';
   password: string = '';
 
@@ -60,7 +55,7 @@ export default class App extends mixins(MyClass, InputRules) {
       if (e.message === 'Invalid login') {
         this.$accessor.alertError(<string>this.$t('errors.wrongPassword'));
       } else {
-        this.$accessor.alertError(<string>this.$t('errors.timeout'))
+        this.$accessor.alertError(<string>this.$t('errors.timeout'));
       }
     } finally {
       this.setLoading();

@@ -42,7 +42,7 @@
         <v-list-item>
           <v-list-item-content>
             <v-list-item-title class="text-h6">
-              {{$accessor.user.firstname || '-'}}, {{$accessor.user.lastname || '-'}}
+              {{$accessor.user.firstName || '-'}}, {{$accessor.user.lastName || '-'}}
             </v-list-item-title>
             <v-list-item-subtitle>{{$accessor.user.email}}</v-list-item-subtitle>
           </v-list-item-content>

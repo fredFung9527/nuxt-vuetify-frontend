@@ -7,6 +7,14 @@ export default {
   login: "Login",
   loginTitle: "Login to your account",
   basicInfo: "Basic Information",
+  firstName: "First Name",
+  lastName: "Last Name",
+  update: "Update",
+  updated: "Updated",
+  changePassword: "Change Password",
+  oldPassword: "Old Password",
+  newPassword: "New Password",
+  confirmPassword: "Confirm Password",
   errors: {
     wrongPassword: "Incorrect password",
     timeout: "Connection timeout",
@@ -19,6 +27,7 @@ export default {
   rules: {
     required: "Required",
     wrongEmail: "Wrong Email Format",
-    atLeastLength: "At Least {length} characters"
+    atLeastLength: "At Least {length} characters",
+    inconsistPasswords: "Inconsist Passwords",
   }
 };

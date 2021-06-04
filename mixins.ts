@@ -39,7 +39,7 @@ export class MyClass extends Vue {
 
 @Component
 export class InputRules extends Vue {
-  checkReuqired(v: string | number): boolean | string {
+  checkRequired(v: string | number): boolean | string {
     if (typeof v === 'string') {
       return v.length > 0 || <string>this.$t('rules.required');
     }
@@ -53,6 +53,10 @@ export class InputRules extends Vue {
 
   checkLengthMin(v: string, min: number = 6): boolean | string {
     return v && v.length >= min || <string>this.$t('rules.atLeastLength', {length: min});
+  };
+
+  checkPasswords(v1: string, v2: string): boolean | string {
+    return v1 && v2 && v1 === v2 || <string>this.$t('rules.inconsistPasswords');
   };
 };
 
