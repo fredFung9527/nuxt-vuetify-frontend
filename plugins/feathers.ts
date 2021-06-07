@@ -48,6 +48,7 @@ const authFunctions = {
       const reAuthResult = await feathersClient.reAuthenticate();
       console.log('Re-Authenticated');
       context.store.commit('setUser', reAuthResult.user);
+      context.store.commit('setAccessToken', reAuthResult.accessToken);
       return reAuthResult;
     } catch (error) {
       const loginResult = await feathersClient.authenticate({
@@ -56,12 +57,14 @@ const authFunctions = {
       });
       console.log('Logined');
       context.store.commit('setUser', loginResult.user);
+      context.store.commit('setAccessToken', loginResult.accessToken);
       return loginResult;
     }
   },
   async logout() :Promise<void> {
     await feathersClient.logout();
     context.store.commit('setUser', {});
+    context.store.commit('setAccessToken', '');
   }
 }
 

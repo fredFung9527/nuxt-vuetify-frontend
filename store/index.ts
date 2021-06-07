@@ -6,6 +6,7 @@ export const state = () => ({
   ininted: false as boolean,
   connected: false as boolean,
   user: {} as User,
+  accessToken: '' as string,
 
   alert: false as boolean,
   alertMessage: '' as string,
@@ -31,10 +32,19 @@ export const mutations = mutationTree(state, {
     state.user = user || {};
     localStorage.setItem('user', JSON.stringify(state.user));
   },
+  setAccessToken(state, token: string) {
+    state.accessToken = token || '';
+    localStorage.setItem('accessToken', state.accessToken);
+  },
   initialiseStore(state) {
     if (state.ininted) return;
+
     const userRecord = localStorage.getItem('user');
-    state.user = userRecord ?JSON.parse(userRecord) : {};
+    state.user = userRecord ? JSON.parse(userRecord) : {};
+
+    const accessToken = localStorage.getItem('accessToken');
+    state.accessToken = accessToken || '';
+
     console.log('Store is initialised');
     state.ininted = true;
   },
