@@ -19,8 +19,18 @@ export default class App extends mixins(MyClass, LoginFirst) {
   };
 
   settings = {
-    name: 'Admins',
-    path: 'users/admin'
+    name: this.$t('pages.admins'),
+    path: 'users/admin',
+    sortBy: 'email',
+    descending: true,
+    headers: [
+      { text: this.$t('email'), align: 'start', sortable: true, value: 'email' },
+      { text: this.$t('firstName'), align: 'center', sortable: true, value: 'firstName' },
+      { text: this.$t('lastName'), align: 'center', sortable: true, value: 'lastName' },
+    ],
+    filter: {
+      // role: 'admin'
+    }
   }
 };
 </script>
