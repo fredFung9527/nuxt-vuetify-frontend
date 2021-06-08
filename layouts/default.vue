@@ -53,7 +53,7 @@
     </v-navigation-drawer>
     
     <v-main>
-      <v-container>
+      <v-container class="px-5 py-5">
         <nuxt />
       </v-container>
     </v-main>
@@ -73,3 +73,12 @@ export default class DefaultLayout extends mixins(MyClass) {
   isMini: boolean = false;
 };
 </script>
+
+<style>
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+</style>

@@ -22,7 +22,8 @@ export default {
   pages: {
     home: "主页",
     profile: "我的帐户",
-    loginFirst: "请先登入"
+    loginFirst: "请先登入",
+    admins: "管理员"
   },
   rules: {
     required: "必须填写",

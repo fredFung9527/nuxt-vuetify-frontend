@@ -31,7 +31,7 @@
       </v-row>
     </v-app-bar>
     <v-main>
-      <v-container class="full-height">
+      <v-container class="full-height px-5 py-5">
         <nuxt />
       </v-container>
     </v-main>

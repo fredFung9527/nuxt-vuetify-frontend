@@ -1,6 +1,6 @@
 // Tutorial: https://github.com/danielroe/typed-vuex
 import { getAccessorType, mutationTree } from 'typed-vuex';
-import { User } from '~/types/models';
+import { User, Role } from '~/types/models';
 
 export const state = () => ({
   ininted: false as boolean,
@@ -21,6 +21,9 @@ export const getters = {
   },
   logined(state: RootState): boolean {
     return getters.userID(state).length > 0 || false;
+  },
+  isAdmin(state: RootState): boolean {
+    return state.user?.role === Role.Admin || false;
   },
 };
 

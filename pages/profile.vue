@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <div>
     <v-card rounded>
       <v-card-title>{{$t('basicInfo')}}</v-card-title>
       <v-card-text>
@@ -62,7 +62,7 @@
     <v-row justify="end" no-gutters class="my-5">
       <v-btn rounded large color="primary" @click.stop="changePassword()" :loading="loading">{{$t('update')}}</v-btn>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">

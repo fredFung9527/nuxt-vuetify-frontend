@@ -100,6 +100,13 @@ export default class NavMenu extends mixins(MyClass) {
       title: 'pages.profile',
       to: '/profile'
     },
+    ...this.$accessor.isAdmin ? [
+      {
+        icon: 'mdi-account-lock',
+        title: 'pages.admins',
+        to: '/admins'
+      },
+    ] : []
   ];
 };
 </script>

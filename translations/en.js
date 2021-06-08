@@ -23,11 +23,16 @@ export default {
   pages: {
     home: "Home",
     profile: "Profile",
+    admins: "Admins"
   },
   rules: {
     required: "Required",
     wrongEmail: "Wrong Email Format",
     atLeastLength: "At Least {length} characters",
     inconsistPasswords: "Inconsist Passwords",
+  },
+  table: {
+    noData: "No data available",
+    loading: "Loading..."
   }
 };

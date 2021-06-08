@@ -23,6 +23,7 @@ export default {
   pages: {
     home: "主頁",
     profile: "我的帳戶",
+    admins: "管理員"
   },
   rules: {
     required: "必須填寫",
