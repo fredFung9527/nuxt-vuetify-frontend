@@ -15,6 +15,11 @@ export default {
   oldPassword: "Old Password",
   newPassword: "New Password",
   confirmPassword: "Confirm Password",
+  create: "Create",
+  edit: "Edit",
+  save: "Save",
+  delete: "Delete",
+  close: "Close",
   errors: {
     wrongPassword: "Incorrect password",
     timeout: "Connection timeout",
@@ -32,7 +37,11 @@ export default {
     inconsistPasswords: "Inconsist Passwords",
   },
   table: {
+    all: 'All',
     noData: "No data available",
-    loading: "Loading..."
+    loading: "Loading...",
+    perPage: "Rows per page",
+    sortBy: "Sort by",
+    actions: "Actions"
   }
 };

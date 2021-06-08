@@ -15,6 +15,11 @@ export default {
   oldPassword: "舊密碼",
   newPassword: "新密碼",
   confirmPassword: "確認新密碼",
+  create: "創建",
+  edit: "編輯",
+  save: "儲存",
+  delete: "刪除",
+  close: "關閉",
   errors: {
     wrongPassword: "密碼錯誤",
     timeout: "連接超時",
@@ -30,5 +35,13 @@ export default {
     wrongEmail: "電郵格式錯誤",
     atLeastLength: "至少 {length} 個字符",
     inconsistPasswords: "密碼不一致"
+  },
+  table: {
+    all: '所有',
+    noData: "沒有相關資料",
+    loading: "載入中...",
+    perPage: "每頁行數",
+    sortBy: "排序",
+    actions: "操作"
   }
 };

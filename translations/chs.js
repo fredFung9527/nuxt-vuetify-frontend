@@ -15,6 +15,11 @@ export default {
   oldPassword: "旧密码",
   newPassword: "新密码",
   confirmPassword: "确认新密码",
+  create: "创建",
+  edit: "编辑",
+  save: "储存",
+  delete: "删除",
+  close: "关闭",
   errors: {
     wrongPassword: "密码错误",
     timeout: "连接超时"
@@ -30,5 +35,13 @@ export default {
     wrongEmail: "电邮格式错误",
     atLeastLength: "至少 {length} 个字符",
     inconsistPasswords: "密码不一致"
+  },
+  table: {
+    all: '所有',
+    noData: "没有相关资料",
+    loading: "载入中...",
+    perPage: "每页行数",
+    sortBy: "排序",
+    actions: "操作"
   }
 };

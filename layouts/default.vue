@@ -75,10 +75,4 @@ export default class DefaultLayout extends mixins(MyClass) {
 </script>
 
 <style>
-.full-width {
-  width: 100%;
-}
-.full-height {
-  height: 100%;
-}
 </style>
