@@ -18,6 +18,7 @@ export default {
   create: "Create",
   edit: "Edit",
   save: "Save",
+  saved: "Saved",
   delete: "Delete",
   close: "Close",
   errors: {

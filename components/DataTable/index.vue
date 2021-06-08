@@ -50,10 +50,11 @@
     </client-only>
 
     <client-only>
-      <v-dialog v-model="editDialog">
+      <v-dialog v-if="editDialog" v-model="editDialog">
         <DataTable-Edit 
-          :tableName="settings.name" :item="currentItem" :settings="settings"
+          :item="currentItem" :settings="settings"
           @close="editDialog = false"
+          @saved="editDialog = false; loadData()"
         />
       </v-dialog>
     </client-only>
@@ -79,14 +80,19 @@ export interface HeaderObject {
 };
 
 export interface SchemaObject {
-  text: string,
+  text?: string,
   value: string,
+  default?: any,
   header?: HeaderObject,
-  type?: 'text' | 'textarea' | 'number',
-  readonly?: boolean,
-  editable?: boolean,
-  readonlyWhenCreate?: boolean,
-  editableWhenCreate?: boolean,
+  type?: 'text' | 'textarea' | 'number' | 'password',
+  editor?: {
+    editable?: boolean,
+    readonly?: boolean,
+    editableWhenCreate?: boolean,
+    isEmail?: boolean,
+    must?: boolean,
+    minLength?: number
+  },
   showOrder?: string
 };
 
@@ -135,7 +141,7 @@ export default class DataTable extends mixins(MyClass) {
     return result;
   }
 
-  async getDataFromApi () {
+  async loadData() {
     try {
       const path = this.settings?.path;
       if (!path) return;
@@ -181,12 +187,12 @@ export default class DataTable extends mixins(MyClass) {
       this.options.sortBy = ['_id'];
       this.options.sortDesc = [true];
     }
-    await this.getDataFromApi();
+    await this.loadData();
   };
 
   @Watch('options')
   onNewOption() {
-    this.getDataFromApi();
+    this.loadData();
   }
 };
 </script>

@@ -18,6 +18,7 @@ export default {
   create: "創建",
   edit: "編輯",
   save: "儲存",
+  saved: "已儲存",
   delete: "刪除",
   close: "關閉",
   errors: {

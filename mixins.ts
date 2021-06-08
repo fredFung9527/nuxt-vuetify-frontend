@@ -48,7 +48,7 @@ export class InputRules extends Vue {
 
   checkEmail(v: string): boolean | string {
     const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regex.test(v.toLowerCase()) || <string>this.$t('rules.wrongEmail');
+    return v && regex.test(v.toLowerCase()) || <string>this.$t('rules.wrongEmail');
   };
 
   checkLengthMin(v: string, min: number = 6): boolean | string {

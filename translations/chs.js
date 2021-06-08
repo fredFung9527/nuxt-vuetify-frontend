@@ -18,6 +18,7 @@ export default {
   create: "创建",
   edit: "编辑",
   save: "储存",
+  saved: "已储存",
   delete: "删除",
   close: "关闭",
   errors: {

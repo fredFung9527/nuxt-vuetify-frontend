@@ -28,8 +28,12 @@ export default class App extends mixins(MyClass, LoginFirst) {
           sortable: true,
         },
         type: 'text',
-        readonly: true,
-        editableWhenCreate: true,
+        editor: {
+          readonly: true,
+          editableWhenCreate: true,
+          isEmail: true,
+          must: true
+        },
         showOrder: '1'
       },
       { 
@@ -39,7 +43,7 @@ export default class App extends mixins(MyClass, LoginFirst) {
           sortable: true,
         },
         type: 'text',
-        editable: true,
+        editor: {},
         showOrder: '2'
       },
       { 
@@ -49,8 +53,19 @@ export default class App extends mixins(MyClass, LoginFirst) {
           sortable: true,
         },
         type: 'text',
-        editable: true,
+        editor: {},
         showOrder: '3'
+      },
+      { 
+        text: <string>this.$t('password'),
+        value: 'password',
+        type: 'password',
+        editor: {},
+        showOrder: '4'
+      },
+      { 
+        value: 'role',
+        default: 'admin'
       },
     ],
     filter: {
