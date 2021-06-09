@@ -4,6 +4,7 @@ export default {
   unknownError: "未知错误",
   email: "电邮地址",
   password: "密码",
+  logout: "登入",
   login: "登入",
   loginTitle: "登入你的帐号",
   basicInfo: "基本资料",

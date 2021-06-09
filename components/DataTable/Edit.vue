@@ -11,7 +11,7 @@
               :type="field.type"
               v-model="newItem[field.value]"
               :rules="getRules(field)"
-              :readonly="isEdit && field.readonly"
+              :disabled="isEdit && field.editor && field.editor.readonly"
             />
             <password-field
               v-if="field.type === 'password'"
@@ -19,7 +19,6 @@
               mode="simple"
               v-model="newItem[field.value]"
               :rules="getRules(field)"
-              :readonly="isEdit && field.readonly"
             />
           </v-col>
         </v-row>
@@ -61,8 +60,7 @@ export default class DataTableEdit extends mixins(MyClass, InputRules) {
 
   get editFileds(): SchemaObject[] {
     return _.filter(_.sortBy(this.settings.schema, 'showOrder'), (it: SchemaObject) => {
-      if (!it.editor) return false;
-      return !it.editor.readonly || false;
+      return it.editor ? true : false;
     })
   };
 
@@ -79,7 +77,7 @@ export default class DataTableEdit extends mixins(MyClass, InputRules) {
     try {
       this.setLoading(true);
       if (this.isEdit) {
-        await this.$feathers.service(this.settings.path).patch(this.item._id, this.newItem);
+        await this.$feathers.service(this.settings.path).patch(this.item._id, _.omit(this.newItem, '_id'));
       } else {
         await this.$feathers.service(this.settings.path).create(this.newItem);
       }

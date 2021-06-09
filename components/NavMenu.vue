@@ -91,25 +91,37 @@ export default class NavMenu extends mixins(MyClass) {
     return result;
   }
 
-  items: MenuItem[] = [
-    {
-      icon: 'mdi-home',
-      title: 'pages.home',
-      to: '/'
-    },
-    {
-      icon: 'mdi-account-circle',
-      title: 'pages.profile',
-      to: '/profile'
-    },
-    ...this.$accessor.isAdmin ? [
+  items: MenuItem[] =
+    this.$accessor.logined ? [
       {
-        icon: 'mdi-account-lock',
-        title: 'pages.admins',
-        to: '/admins'
+        icon: 'mdi-home',
+        title: 'pages.home',
+        to: '/'
       },
-    ] : []
-  ];
+      {
+        icon: 'mdi-account-circle',
+        title: 'pages.profile',
+        to: '/profile'
+      },
+      ...this.$accessor.isAdmin ? [
+        {
+          icon: 'mdi-account-lock',
+          title: 'pages.admins',
+          to: '/admins'
+        },
+      ] : [],
+      {
+        icon: 'mdi-login',
+        title: 'logout',
+        to: '/logout'
+      },
+    ] : [
+      {
+        icon: 'mdi-login',
+        title: 'login',
+        to: '/login'
+      },
+    ]
 };
 </script>
 

@@ -4,6 +4,7 @@ export default {
   unknownError: "Unknown Error",
   email: "Email",
   password: "Password",
+  logout: "Logout",
   login: "Login",
   loginTitle: "Login to your account",
   basicInfo: "Basic Information",
