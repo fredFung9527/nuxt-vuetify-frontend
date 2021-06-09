@@ -16,11 +16,13 @@ export default {
   oldPassword: "舊密碼",
   newPassword: "新密碼",
   confirmPassword: "確認新密碼",
+  confirm: "確認",
   create: "創建",
   edit: "編輯",
   save: "儲存",
   saved: "已儲存",
   delete: "刪除",
+  deleted: "已刪除",
   close: "關閉",
   errors: {
     wrongPassword: "密碼錯誤",

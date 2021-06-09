@@ -16,11 +16,13 @@ export default {
   oldPassword: "Old Password",
   newPassword: "New Password",
   confirmPassword: "Confirm Password",
+  confirm: "Confirm",
   create: "Create",
   edit: "Edit",
   save: "Save",
   saved: "Saved",
   delete: "Delete",
+  deleted: "Deleted",
   close: "Close",
   errors: {
     wrongPassword: "Incorrect password",

@@ -41,6 +41,7 @@
             <v-btn 
               v-if="!settings.disableActions || (settings.disableActions && !settings.disableActions.delete)"
               icon color="error"
+              @click.stop="currentItem = item; deleteDialog = true"
             >
               <v-icon>mdi-delete</v-icon>
             </v-btn>
@@ -55,6 +56,13 @@
           :item="currentItem" :settings="settings"
           @close="editDialog = false"
           @saved="editDialog = false; loadData()"
+        />
+      </v-dialog>
+      <v-dialog v-if="deleteDialog" v-model="deleteDialog">
+        <DataTable-Delete 
+          :items="[currentItem]" :settings="settings"
+          @close="deleteDialog = false"
+          @deleted="deleteDialog = false; loadData()"
         />
       </v-dialog>
     </client-only>
@@ -117,6 +125,7 @@ export default class DataTable extends mixins(MyClass) {
   @Prop({ default: () => {} }) readonly settings!: Setting;
 
   editDialog: boolean = false;
+  deleteDialog: boolean = false;
   currentItem: any = {};
 
   options: any = {};

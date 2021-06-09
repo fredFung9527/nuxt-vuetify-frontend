@@ -16,11 +16,13 @@ export default {
   oldPassword: "旧密码",
   newPassword: "新密码",
   confirmPassword: "确认新密码",
+  confirm: "确认",
   create: "创建",
   edit: "编辑",
   save: "储存",
   saved: "已储存",
   delete: "删除",
+  deleted: "已删除",
   close: "关闭",
   errors: {
     wrongPassword: "密码错误",

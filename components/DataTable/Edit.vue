@@ -35,7 +35,7 @@
 import { Component, mixins, Prop, Ref } from 'nuxt-property-decorator';
 import { MyClass, InputRules } from '~/mixins';
 import { Setting, SchemaObject } from './index.vue';
-import _, { filter } from 'lodash';
+import _ from 'lodash';
 import Vue from 'vue';
 
 @Component
